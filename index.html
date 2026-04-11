@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>macOS Clone - Powerful Edition</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dock.css">
+    <link rel="stylesheet" href="css/apps.css">
+</head>
+<body>
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <div class="apple-logo"></div>
+            <div class="menu-item">Finder</div>
+            <div class="menu-item">File</div>
+            <div class="menu-item">Edit</div>
+            <div class="menu-item">View</div>
+            <div class="menu-item">Go</div>
+            <div class="menu-item">Window</div>
+            <div class="menu-item">Help</div>
+        </div>
+        <div class="menu-right">
+            <div class="control-center">
+                <div class="wifi"></div>
+                <div class="battery"></div>
+            </div>
+            <div class="time" id="time">12:00 PM</div>
+        </div>
+    </div>
 
+    <!-- Desktop Icons -->
+    <div class="desktop-grid">
+        <div class="desktop-icon" data-app="finder">
+            <img src="assets/icons/finder.png" alt="Finder" onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732238.png'">
+            <span>Finder</span>
+        </div>
+        <div class="desktop-icon" data-app="trash">
+            <img src="assets/icons/trash.png" alt="Trash" onerror="this.src='https://cdn-icons-png.flaticon.com/512/814/814178.png'">
+            <span>Trash</span>
+        </div>
+    </div>
+
+    <!-- Windows Container -->
+    <div id="windows-container"></div>
+
+    <!-- Dock -->
+    <div class="dock">
+        <div class="dock-item" data-app="finder">
+            <img class="dock-icon" src="assets/icons/finder.png" alt="Finder" onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732238.png'">
+            <span class="dock-label">Finder</span>
+        </div>
+        <div class="dock-item" data-app="safari">
+            <img class="dock-icon" src="assets/icons/safari.png" alt="Safari" onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732248.png'">
+            <span class="dock-label">Safari</span>
+        </div>
+        <div class="dock-item" data-app="notes">
+            <img class="dock-icon" src="assets/icons/notes.png" alt="Notes" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2991/2991142.png'">
+            <span class="dock-label">Notes</span>
+        </div>
+        <div class="dock-item" data-app="calculator">
+            <img class="dock-icon" src="assets/icons/calculator.png" alt="Calculator" onerror="this.src='https://cdn-icons-png.flaticon.com/512/685/685674.png'">
+            <span class="dock-label">Calculator</span>
+        </div>
+        <div class="dock-item" data-app="calendar">
+            <img class="dock-icon" src="assets/icons/calendar.png" alt="Calendar" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2902/2902581.png'">
+            <span class="dock-label">Calendar</span>
+        </div>
+        <div class="dock-item" data-app="weather">
+            <img class="dock-icon" src="assets/icons/weather.png" alt="Weather" onerror="this.src='https://cdn-icons-png.flaticon.com/512/6974/6974833.png'">
+            <span class="dock-label">Weather</span>
+        </div>
+        <div class="dock-item" data-app="music">
+            <img class="dock-icon" src="assets/icons/music.png" alt="Music" onerror="this.src='https://cdn-icons-png.flaticon.com/512/727/727245.png'">
+            <span class="dock-label">Music</span>
+        </div>
+        <div class="dock-item" data-app="terminal">
+            <img class="dock-icon" src="assets/icons/terminal.png" alt="Terminal" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4257/4257703.png'">
+            <span class="dock-label">Terminal</span>
+        </div>
+        <div class="dock-item" data-app="todo">
+            <img class="dock-icon" src="assets/icons/todo.png" alt="Todo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3153/3153177.png'">
+            <span class="dock-label">Todo</span>
+        </div>
+        <div class="dock-item" data-app="settings">
+            <img class="dock-icon" src="assets/icons/settings.png" alt="Settings" onerror="this.src='https://cdn-icons-png.flaticon.com/512/545/545826.png'">
+            <span class="dock-label">Settings</span>
+        </div>
+        <div class="dock-item" data-app="trash">
+            <img class="dock-icon" src="assets/icons/trash.png" alt="Trash" onerror="this.src='https://cdn-icons-png.flaticon.com/512/814/814178.png'">
+            <span class="dock-label">Trash</span>
+        </div>
+    </div>
+
+    <script src="js/apps/calculator.js"></script>
+    <script src="js/apps/notes.js"></script>
+    <script src="js/apps/browser.js"></script>
+    <script src="js/apps/terminal.js"></script>
+    <script src="js/apps/finder.js"></script>
+    <script src="js/apps/settings.js"></script>
+    <script src="js/apps/calendar.js"></script>
+    <script src="js/apps/weather.js"></script>
+    <script src="js/apps/music.js"></script>
+    <script src="js/apps/todo.js"></script>
+    <script src="js/apps/clock.js"></script>
+    <script src="js/windowManager.js"></script>
+    <script src="js/dock.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
