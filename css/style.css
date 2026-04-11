@@ -1,1 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
 
+body {
+    font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: url('../assets/wallpapers/default.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Menu Bar */
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: rgba(30, 30, 35, 0.75);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 1000;
+}
+
+.menu-left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.apple-logo {
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.menu-item {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.menu-item:hover {
+    opacity: 0.7;
+}
+
+.menu-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.control-center {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.battery {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.battery::before {
+    content: "🔋";
+    font-size: 12px;
+}
+
+.wifi::before {
+    content: "📶";
+    font-size: 12px;
+}
+
+/* Desktop Icons */
+.desktop {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    right: 0;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.desktop-icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 6px;
+}
+
+.desktop-icon span {
+    color: white;
+    font-size: 12px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* Windows */
+.window {
+    position: absolute;
+    background: rgba(30, 30, 35, 0.95);
+    backdrop-filter: blur(30px);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 0.5px rgba(255,255,255,0.1);
+    min-width: 400px;
+    min-height: 500px;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+    animation: windowAppear 0.2s ease;
+}
+
+@keyframes windowAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.window.active {
+    display: flex;
+}
+
+.window-header {
+    height: 40px;
+    background: rgba(40, 40, 45, 0.95);
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    cursor: move;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    margin-right: 12px;
+}
+
+.window-close, .window-minimize, .window-maximize {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.window-close {
+    background: #ff5f57;
+}
+
+.window-minimize {
+    background: #febc2e;
+}
+
+.window-maximize {
+    background: #28c840;
+}
+
+.window-close:hover, .window-minimize:hover, .window-maximize:hover {
+    opacity: 0.7;
+}
+
+.window-title {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+}
+
+.window-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    color: white;
+}
+
+/* Desktop Grid */
+.desktop-grid {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .window {
+        min-width: 90vw;
+        min-height: 70vh;
+    }
+    
+    .menu-item:not(.apple-logo) {
+        display: none;
+    }
+}
